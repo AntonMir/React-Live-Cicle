@@ -11,8 +11,6 @@ export default class Articles extends Component {
         this.state = {
             openArticleId: null,
         }
-
-        this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick = openArticleId => {
@@ -27,8 +25,8 @@ export default class Articles extends Component {
                 <Article 
                     article={article} 
                     isOpen={this.state.openArticleId === article.id}
-                    // onButtonClick={this.handleClick.bind(this, article.id)}
-                    onButtonClick={() => this.handleClick(article.id)}
+
+                    handleClick={this.handleClick}
                 />
             </li>
         )
